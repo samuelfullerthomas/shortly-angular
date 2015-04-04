@@ -1,6 +1,10 @@
 <div id='container'>
+<input ng-model="search" placeholder="Search"/>
   <ul>
-  <li ng-repeat="things in data.links">{{things}}</li>
+<!--   <li ng-repeat="things in data.links | filter: search" ng-click="goTo(things.base_url things.code)"><a>{{things.title }}</a></li> -->
+  <li ng-repeat="things in data.links | filter: search | orderBy: -visits">
+  <a href='http://localhost:3000/api/links/{{ things.code }}'>{{things.title + things.visits}}</a></li>
   </ul>
 </div> 
 
+<!-- {things.base_url + things.code} -->

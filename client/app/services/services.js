@@ -13,6 +13,7 @@ angular.module('shortly.services', [])
       console.log(resp.data)
     })
   }
+  
   return {data : data, getLinks: getLinks}
 })
 
